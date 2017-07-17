@@ -10,6 +10,6 @@ namespace UsageDataAnonymiser.Models
     {
         public string UserId { get; set; }
         public string ItemId { get; set; }
-        public DateTime Time { get; set; }
+        public string Time { get; set; }
     }
 }
