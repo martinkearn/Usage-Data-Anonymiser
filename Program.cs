@@ -41,7 +41,7 @@ namespace UsageDataAnonymiser
                     if (value == null)
                     {
                         // Haven't seen it so add to the dictionary and set the userId to the new value
-                        var newValue = Guid.NewGuid().ToString();
+                        var newValue = Guid.NewGuid().ToString(); //Note that this will create a new, unique Guid each time the application runs. If you need to persist the same ID accross application executions (i.e. you do a cumulative daily or weekly usage export). You'll need to use something other than new Guids here; perhaps some kind of offline mapping table between UserId and Guid?
                         userIdDictionary.Add(usageEvent.UserId, newValue);
                         usageEvent.UserId = newValue;
                     }
